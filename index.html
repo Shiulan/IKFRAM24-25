@@ -10,14 +10,17 @@
     <h1>Hello</h1>
 
     <div id="app">
-        <h1>{{ title }} - {{ description }} - {{ age }}</h1>
 
-        <button v-on:click="age++">Increase age</button>
-        <button v-on:click="age--">Decrease age</button>
-        <div @click="title = 'test'">Change title</div>
-        <div @click="age = age + 1">Change age</div>
+        <div v-if="showBooks">
+            <h1>{{ title }} - {{ description }} - {{ age }}</h1>
+        </div>
+        
+        <button @click="toggleShowBooks">
+            <span v-if="!showBooks">Show books</span>
+            <span v-else>Hide books</span>
+        </button>
 
-        <div @click="changeTitle('Title from method with parameter')">Change title with method</div>
+        <div v-show="showBooks">Currently showing books</div>
     </div>
 
     <script src="app.js"></script>
