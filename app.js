@@ -6,7 +6,12 @@ const app = Vue.createApp({
             description: 'test',
             age: 40,
             x: 0,
-            y: 0
+            y: 0,
+            books: [
+                { title: 'book1', author: 'You'},
+                { title: 'book2', author: 'Me'},
+                { title: 'book3', author: 'Us'},
+            ]
         }
     },
     methods: {

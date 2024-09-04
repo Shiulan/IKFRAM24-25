@@ -14,6 +14,13 @@
 
         <div v-if="showBooks">
             <h1>{{ title }} - {{ description }} - {{ age }}</h1>
+            <ul>
+                <li v-for="book in books">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
+            <p>{{ books[0].title }} - {{ description }} - {{ age }}</p>
         </div>
         
         <button @click="toggleShowBooks">
