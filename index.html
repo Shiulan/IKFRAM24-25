@@ -18,7 +18,7 @@
         <div v-if="showBooks">
             <h1>{{ title }} - {{ description }} - {{ age }}</h1>
             <ul>
-                <li v-for="book in books">
+                <li v-for="book in books" :class="{ fav: book.isFav}">
                     <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
