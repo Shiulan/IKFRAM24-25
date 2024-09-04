@@ -11,11 +11,15 @@
     <h1>Hello</h1>
 
     <div id="app">
+        <!-- attribute binding -->
+        <a v-bind:href="url">Attribute binding</a><br>
+        <a :href="url">Attribute binding</a>
 
         <div v-if="showBooks">
             <h1>{{ title }} - {{ description }} - {{ age }}</h1>
             <ul>
                 <li v-for="book in books">
+                    <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
                 </li>
