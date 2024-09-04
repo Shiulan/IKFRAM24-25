@@ -8,9 +8,11 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hello</h1>
+    <h1>Hello vue</h1>
 
     <div id="app">
+        <p>{{ filteredBooks }}</p>
+
         <!-- attribute binding -->
         <a v-bind:href="url">Attribute binding</a><br>
         <a :href="url">Attribute binding</a>
@@ -28,7 +30,21 @@
                     </button>
                 </li>
             </ul>
-            <p>{{ books[0].title }} - {{ description }} - {{ age }}</p>
+        </div>
+
+        <div v-if="showBooks">
+            <h1>Favorite books</h1>
+            <ul>
+                <li v-for="book in filteredBooks" :class="{ fav: book.isFav}">
+                    <img :src="book.img" :alt="book.title">
+                    <h3>{{ book.title }}</h3>
+                    <p>{{ book.author }}</p>
+                    <button @click="toggleFav(book)">
+                        <span v-if="!book.isFav">Add to favorites</span>
+                        <span v-else>Remove favorites</span>
+                    </button>
+                </li>
+            </ul>
         </div>
         
         <button @click="toggleShowBooks">
