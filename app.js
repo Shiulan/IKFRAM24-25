@@ -28,6 +28,10 @@ const app = Vue.createApp({
         handleMouseMove(event) {
             this.x = event.offsetY
             this.y = event.offsetY
+        },
+        toggleFav(book) {
+            console.log(book.isFav)
+            book.isFav = !book.isFav
         }
     }
 })

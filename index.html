@@ -22,6 +22,10 @@
                     <img :src="book.img" :alt="book.title">
                     <h3>{{ book.title }}</h3>
                     <p>{{ book.author }}</p>
+                    <button @click="toggleFav(book)">
+                        <span v-if="!book.isFav">Add to favorites</span>
+                        <span v-else>Remove favorites</span>
+                    </button>
                 </li>
             </ul>
             <p>{{ books[0].title }} - {{ description }} - {{ age }}</p>
