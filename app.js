@@ -1,6 +1,10 @@
 const app = Vue.createApp({
-    // template: '<h2>Heading 2</h2>'
-    
+    data() {
+        return {
+            title: 'Titel',
+            description: 'test'
+        }
+    }
 })
 
 app.mount('#app')
